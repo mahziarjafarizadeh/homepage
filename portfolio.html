@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | Mahziar Jafarizadeh</title>
+
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'><rect width='100%' height='100%' fill='black'/><path d='M250,454.1c-112.6,0-204.1-91.6-204.1-204.1v-16.3h49v16.3c0,85.5,69.6,155.1,155.1,155.1s155.1-69.6,155.1-155.1V94.9h-122.5v-49h171.5v204.1c0,112.6-91.6,204.1-204.1,204.1Z' fill='white' /><polygon points='199 45.9 152 92.9 105 45.9 45.9 45.9 45.9 209.2 94.9 209.2 94.9 105 152 162.2 209.2 105 209.2 209.2 258.2 209.2 258.2 45.9 199 45.9' fill='white' /></svg>">
+  <meta name="author" content="Mahziar Jafarizadeh">
+
+  <meta name="description"
+    content="Instagram portfolio of Mahziar Jafarizadeh, a professional graphic designer and photographer based in Berlin.">
+  <meta name="keywords"
+    content="Mahziar Jafarizadeh, Photography Portfolio, Instagram Gallery, Graphic Designer, Photographer, Berlin">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&family=JetBrains+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Reset and Base Styles */
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #000000;
+      color: white;
+      font-family: 'Vazirmatn', 'JetBrains Mono', monospace;
+      scroll-behavior: smooth;
+    }
+
+    /* Header with Logo and Navigation */
+    .page-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      position: sticky;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .header-logo {
+      width: 50px;
+      height: auto;
+    }
+
+    .main-nav ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 30px;
+    }
+
+    .main-nav a {
+      color: white;
+      text-decoration: none;
+      font-size: 1.1rem;
+      padding: 10px 0;
+      position: relative;
+      transition: color 0.4s ease;
+    }
+
+    .main-nav a.active::after,
+    .main-nav a:hover::after {
+      transform: scaleX(1);
+    }
+
+    .main-nav a::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background-color: white;
+      bottom: 0;
+      left: 0;
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.4s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    /* Portfolio Section */
+    .portfolio-container {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    .portfolio-header h1 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2.5rem;
+      text-align: center;
+      margin-bottom: 10px;
+      letter-spacing: 2px;
+    }
+
+    .portfolio-header p {
+      font-size: 1.1rem;
+      text-align: center;
+      color: #aaa;
+      margin-bottom: 50px;
+    }
+
+    /* Instagram Grid */
+    #instagram-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .instagram-post {
+      background-color: #111;
+      border: 1px solid #222;
+      border-radius: 8px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .instagram-post:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+    }
+
+    .post-media {
+      position: relative;
+      padding-bottom: 100%;
+      /* 1:1 Aspect Ratio */
+      background-color: #050505;
+    }
+
+    .post-media img,
+    .post-media video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .post-content {
+      padding: 15px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .post-caption {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 15px;
+      color: #ccc;
+    }
+
+    .post-stats {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      margin-top: auto;
+      border-top: 1px solid #222;
+      padding-top: 10px;
+    }
+
+    .stat {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      font-family: 'JetBrains Mono', monospace;
+      color: #999;
+    }
+
+    .stat svg {
+      width: 18px;
+      height: 18px;
+      fill: #999;
+    }
+
+    .page-footer {
+      text-align: center;
+      padding: 40px 20px;
+      margin-top: 60px;
+      border-top: 1px solid #222;
+    }
+
+    .copyright {
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.5);
+    }
+
+    .copyright-link {
+      font-weight: bold;
+      color: rgba(255, 255, 255, 0.5);
+      text-decoration: none;
+      transition: color 0.5s ease;
+    }
+
+    .copyright-link:hover {
+      color: rgba(255, 255, 255, 1);
+    }
+
+    @media (max-width: 768px) {
+      .page-header {
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      #instagram-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header class="page-header">
+    <a href="index.html">
+      <svg class="header-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+        <rect width='100%' height='100%' fill='black' />
+        <path fill='white'
+          d="M250,454.1c-112.6,0-204.1-91.6-204.1-204.1v-16.3h49v16.3c0,85.5,69.6,155.1,155.1,155.1s155.1-69.6,155.1-155.1V94.9h-122.5v-49h171.5v204.1c0,112.6-91.6,204.1-204.1,204.1Z" />
+        <polygon fill='white'
+          points="199 45.9 152 92.9 105 45.9 45.9 45.9 45.9 209.2 94.9 209.2 94.9 105 152 162.2 209.2 105 209.2 209.2 258.2 209.2 258.2 45.9 199 45.9" />
+      </svg>
+    </a>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="javascript:void(0);">Download</a></li>
+        <li><a href="javascript:void(0);">Bio</a></li>
+        <li><a href="javascript:void(0);">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="portfolio-container">
+    <header class="portfolio-header">
+      <h1>Photography & Design</h1>
+      <p>A live feed from my Instagram portfolio.</p>
+    </header>
+    <div id="instagram-grid">
+    </div>
+  </main>
+
+  <footer class="page-footer">
+    <p class="copyright">
+      Copyright © 2022-2025 <a href="index.html" class="copyright-link">Mahziar Jafarizadeh</a>
+    </p>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const grid = document.getElementById('instagram-grid');
+
+      // Fetch the pre-generated JSON file
+      fetch('./posts.json')
+        .then(response => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+          }
+          return response.json();
+        })
+        .then(posts => {
+          if (!posts || posts.length === 0) {
+            grid.innerHTML = '<p style="text-align: center; color: #888;">Could not load posts or no posts found.</p>';
+            return;
+          }
+
+          let postsHtml = '';
+          posts.forEach(post => {
+            // Use thumbnail_url for videos, otherwise media_url for images
+            const mediaUrl = post.media_type === 'VIDEO' ? post.thumbnail_url : post.media_url;
+
+            postsHtml += `
+              <div class="instagram-post">
+                <a href="${post.permalink}" target="_blank" rel="noopener noreferrer">
+                  <div class="post-media">
+                    <img src="${mediaUrl}" alt="${post.caption.substring(0, 50)}" loading="lazy">
+                  </div>
+                </a>
+                <div class="post-content">
+                  <p class="post-caption">${post.caption || 'No caption'}</p>
+                  <div class="post-stats">
+                    <div class="stat">
+                      <svg viewBox="0 0 24 24"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path></svg>
+                      <span>${post.like_count}</span>
+                    </div>
+                    <div class="stat">
+                      <svg viewBox="0 0 24 24"><path d="M21.99 4c0-1.1-.89-2-1.99-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h14l4 4-.01-18zM18 14H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z"></path></svg>
+                      <span>${post.comments_count}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+          grid.innerHTML = postsHtml;
+        })
+        .catch(error => {
+          console.error('Error fetching Instagram posts:', error);
+          grid.innerHTML = '<p style="text-align: center; color: #888;">Failed to load Instagram posts. Please try again later.</p>';
+        });
+    });
+  </script>
+
+</body>
+
+</html>
