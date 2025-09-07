@@ -250,6 +250,21 @@
         display: block;
       }
 
+      /* START: Added/Modified Code */
+      #hamburger-btn svg {
+        transition: fill 0.4s ease;
+        /* For smooth color change */
+        fill: rgba(255, 255, 255, 0.5);
+        /* 50% white */
+      }
+
+      #hamburger-btn.active svg {
+        fill: rgba(255, 255, 255, 1);
+        /* 100% white when active */
+      }
+
+      /* END: Added/Modified Code */
+
       /* Hide the empty spacer div on mobile */
       .page-header div[style*="width: 50px"] {
         display: none;
@@ -452,6 +467,7 @@
       if (hamburgerBtn && navMenu) {
         hamburgerBtn.addEventListener('click', function () {
           navMenu.classList.toggle('menu-open');
+          hamburgerBtn.classList.toggle('active');
         });
       }
     });
