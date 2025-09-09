@@ -5,36 +5,70 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mahziar Jafarizadeh</title>
+  <meta name="author" content="Mahziar Jafarizadeh">
+  <meta name="description"
+    content="Explore the creative portfolio of Mahziar Jafarizadeh, a multi-talented Graphic Designer, Photographer, and Python Developer based in Berlin. Discover unique projects in logo design, branding, and captivating photography.">
+  <meta name="keywords"
+    content="Mahziar Jafarizadeh, Graphic Designer Berlin, Photographer Berlin, Python Developer, Creative Portfolio, Logo Design, Branding, Web Design, Freelance Designer, Photography Portfolio, Berlin Artist">
+
+  <link rel="canonical" href="https://mahziarjafarizadeh.com/">
+  <meta name="robots" content="index, follow">
 
   <link rel="icon"
     href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 500 500'><rect width='100%' height='100%' fill='black'/><path d='M250,454.1c-112.6,0-204.1-91.6-204.1-204.1v-16.3h49v16.3c0,85.5,69.6,155.1,155.1,155.1s155.1-69.6,155.1-155.1V94.9h-122.5v-49h171.5v204.1c0,112.6-91.6,204.1-204.1,204.1Z' fill='white' /><polygon points='199 45.9 152 92.9 105 45.9 45.9 45.9 45.9 209.2 94.9 209.2 94.9 105 152 162.2 209.2 105 209.2 209.2 258.2 209.2 258.2 45.9 199 45.9' fill='white' /></svg>">
-  <meta name="author" content="Mahziar Jafarizadeh">
-
-  <meta name="description"
-    content="Portfolio of Mahziar Jafarizadeh, a professional graphic designer, photographer, and Python developer based in Berlin. Specializing in logo design, posters, websites, and creative photography.">
-  <meta name="keywords"
-    content="Mahziar Jafarizadeh, Graphic Designer, Photographer, Python Developer, Berlin, Logo Design, Poster Design, Web Design, Freelancer, Creative Portfolio">
 
   <meta http-equiv="Content-Language" content="en, de">
   <link rel="alternate" hreflang="de" href="#">
+  <meta property="og:locale" content="en_US">
   <meta property="og:locale:alternate" content="de_DE">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://mahziarjafarizadeh.com/">
-  <meta property="og:title" content="Mahziar Jafarizadeh | Graphic Designer & Photographer">
+  <meta property="og:site_name" content="Mahziar Jafarizadeh's Portfolio">
+  <meta property="og:title" content="Mahziar Jafarizadeh | Graphic Designer & Photographer in Berlin">
   <meta property="og:description"
     content="Creative portfolio of a Berlin-based graphic designer, photographer, and Python developer.">
   <meta property="og:image" content="https://mahziarjafarizadeh.com/Open Graph.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
   <meta name="twitter:card" content="summary_large_image">
   <meta property="twitter:url" content="https://mahziarjafarizadeh.com/">
-  <meta name="twitter:title" content="Mahziar Jafarizadeh | Graphic Designer & Photographer">
+  <meta name="twitter:creator" content="@m_jafarizadeh">
+  <meta name="twitter:title" content="Mahziar Jafarizadeh | Graphic Designer & Photographer in Berlin">
   <meta name="twitter:description"
     content="Creative portfolio of a Berlin-based graphic designer, photographer, and Python developer.">
   <meta name="twitter:image" content="https://mahziarjafarizadeh.com/Open Graph.jpg">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
     rel="stylesheet">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Mahziar Jafarizadeh",
+    "url": "https://mahziarjafarizadeh.com/",
+    "image": "https://mahziarjafarizadeh.com/Open Graph.jpg",
+    "jobTitle": ["Graphic Designer", "Photographer", "Python Developer"],
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Berlin",
+      "addressCountry": "DE"
+    },
+    "sameAs": [
+      "https://www.instagram.com/mahziarjafarizadeh/",
+      "https://www.behance.net/Mahziar_Jafarizadeh",
+      "https://www.youtube.com/@mahziarjafarizadeh",
+      "https://soundcloud.com/mahziarjafarizadeh",
+      "https://www.facebook.com/mahziarjafarizadeh",
+      "https://x.com/m_jafarizadeh"
+    ]
+  }
+  </script>
+
   <style>
     /* Reset default browser styles */
     body,
@@ -254,7 +288,12 @@
       }
 
       .social-links {
-        flex-wrap: wrap;
+        /* CHANGED: Force icons to stay in one line */
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        /* Adds horizontal scroll if needed on very small screens */
+        -webkit-overflow-scrolling: touch;
+        /* Smooth scrolling on iOS */
         justify-content: center;
         gap: 25px;
         margin: 60px 0;
@@ -297,9 +336,9 @@
     <nav class="main-nav">
       <ul>
         <li><a href="#top">Home</a></li>
-        <li><a href="portfolio">Portfolio</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
         <li><a href="javascript:void(0);">Download</a></li>
-        <li><a href="javascript:void(0);">Bio</a></li>
+        <li><a href="bio.html">Bio</a></li>
         <li><a href="javascript:void(0);">Contact</a></li>
       </ul>
     </nav>
