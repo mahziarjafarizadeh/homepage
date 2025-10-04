@@ -287,6 +287,34 @@
       color: rgba(255, 255, 255, 1);
     }
 
+    /* Back to Top Button */
+    .scroll-top-btn {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      cursor: pointer;
+      color: rgba(255, 255, 255, 0.5);
+      transition: color 0.5s ease, transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .scroll-top-btn.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top-btn:hover {
+      color: rgba(255, 255, 255, 1);
+      transform: scale(1.1);
+    }
+
+    .scroll-top-svg {
+      width: 50px;
+      height: 50px;
+    }
+
     /* --- Responsive Design --- */
     @media (max-width: 900px) {
       .page-title-header h1 {
@@ -553,8 +581,26 @@
     </p>
   </footer>
 
+  <a href="#top" class="scroll-top-btn" title="Back to top">
+    <svg class="scroll-top-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path
+        d="M12.0001 4.83594L5.79297 11.043L7.20718 12.4573L12.0001 7.66436L16.793 12.4573L18.2072 11.043L12.0001 4.83594ZM12.0001 10.4858L5.79297 16.6929L7.20718 18.1072L12.0001 13.3143L16.793 18.1072L18.2072 16.6929L12.0001 10.4858Z"
+        fill="currentColor" />
+    </svg>
+  </a>
+
   <script>
     document.addEventListener('DOMContentLoaded', function () {
+      const scrollTopBtn = document.querySelector('.scroll-top-btn');
+      if (scrollTopBtn) {
+        window.addEventListener('scroll', function () {
+          if (window.scrollY > 300) {
+            scrollTopBtn.classList.add('visible');
+          } else {
+            scrollTopBtn.classList.remove('visible');
+          }
+        });
+      }
       const hamburgerBtn = document.getElementById('hamburger-btn');
       const navMenu = document.querySelector('.main-nav');
       if (hamburgerBtn && navMenu) {
